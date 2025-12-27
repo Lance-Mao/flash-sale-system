@@ -24,7 +24,12 @@
       "Bash(gofmt:*)",
       "Bash(git add:*)",
       "Bash(git commit -m \"$(cat <<''EOF''\nstyle: fix all Go file formatting issues\n\n- Remove BOM (Byte Order Mark) from 112 Go files\n- Run gofmt on all Go files (171 files formatted)\n- Run goimports to fix import statement ordering\n- Fix composite literal syntax in krand.go\n- Fix struct field alignment in settleRecord.go\n\nAll \"File is not properly formatted\" lint errors are now resolved.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
-      "Bash(make test:*)"
+      "Bash(make test:*)",
+      "Bash(kubectl cluster-info:*)",
+      "Bash(kubectl get:*)",
+      "Bash(kubectl config:*)",
+      "Bash(kubectl create:*)",
+      "Bash(kubectl apply:*)"
     ],
     "deny": [],
     "ask": []

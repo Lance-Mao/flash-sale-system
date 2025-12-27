@@ -9,6 +9,7 @@
 - **DEVELOPMENT.md**: 完整开发文档（开发规范、部署指南、故障排查）
 - **FEATURE_ROADMAP.md**: 功能扩展路线图（业务功能、架构优化）
 - **CI_CD_GUIDE.md**: CI/CD 实施指南（详细步骤、配置说明）
+- **GITHUB_SECRETS_GUIDE.md**: GitHub Secrets 配置详细指南（任务 12 专用）
 
 ### 已部署的配置文件
 以下配置文件已放置在项目相应位置（不在此文件夹）：

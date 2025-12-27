@@ -21,4 +21,10 @@ data/*
 .claude/
 .claude
 
+# sensitive files
+scripts/kubeconfig-base64.txt
+**/kubeconfig-base64.txt
+*.pem
+*.key
+
 

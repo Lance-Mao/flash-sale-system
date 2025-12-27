@@ -9,8 +9,8 @@ on:
 
 env:
   GO_VERSION: '1.22'
-  REGISTRY: harbor.example.com
-  IMAGE_PREFIX: flashsale
+  REGISTRY: docker.io  # 使用 Docker Hub（如需更换为 Harbor 或阿里云，修改此处）
+  IMAGE_PREFIX: mzlone  # 你的 Docker Hub 用户名（确保与 HARBOR_USERNAME 匹配）
 
 jobs:
   # 代码检查与测试

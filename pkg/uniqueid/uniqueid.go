@@ -1,6 +1,8 @@
 package uniqueid
 
 import (
+	"math"
+
 	"github.com/sony/sonyflake"
 	"github.com/zeromicro/go-zero/core/logx"
 )
@@ -19,5 +21,11 @@ func GenId() int64 {
 		panic(err)
 	}
 
-	return int64(id)
+	// Check for overflow before converting to int64
+	if id > math.MaxInt64 {
+		logx.Severef("generated ID %d exceeds int64 max value", id)
+		panic("ID overflow")
+	}
+
+	return int64(id) //nolint:gosec // G115: Checked for overflow above
 }

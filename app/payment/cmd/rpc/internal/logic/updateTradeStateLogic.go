@@ -1,10 +1,11 @@
-﻿package logic
+package logic
 
 import (
 	"context"
 	"encoding/json"
-	"github.com/Lance-Mao/flash-sale-system/pkg/kqueue"
 	"time"
+
+	"github.com/Lance-Mao/flash-sale-system/pkg/kqueue"
 
 	"github.com/Lance-Mao/flash-sale-system/app/payment/cmd/rpc/internal/svc"
 	"github.com/Lance-Mao/flash-sale-system/app/payment/cmd/rpc/pb"

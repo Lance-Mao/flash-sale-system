@@ -1,4 +1,4 @@
-﻿package jobtype
+package jobtype
 
 import "github.com/Lance-Mao/flash-sale-system/app/order/model"
 
@@ -6,7 +6,6 @@ import "github.com/Lance-Mao/flash-sale-system/app/order/model"
 type DeferCloseHomestayOrderPayload struct {
 	Sn string
 }
-
 
 // PaySuccessNotifyUserPayload pay success notify user
 type PaySuccessNotifyUserPayload struct {

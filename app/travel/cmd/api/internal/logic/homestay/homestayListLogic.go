@@ -1,13 +1,14 @@
-﻿package homestay
+package homestay
 
 import (
 	"context"
-	"github.com/Masterminds/squirrel"
+
 	"github.com/Lance-Mao/flash-sale-system/app/travel/cmd/api/internal/svc"
 	"github.com/Lance-Mao/flash-sale-system/app/travel/cmd/api/internal/types"
 	"github.com/Lance-Mao/flash-sale-system/app/travel/model"
 	"github.com/Lance-Mao/flash-sale-system/pkg/tool"
 	"github.com/Lance-Mao/flash-sale-system/pkg/xerr"
+	"github.com/Masterminds/squirrel"
 
 	"github.com/jinzhu/copier"
 	"github.com/pkg/errors"

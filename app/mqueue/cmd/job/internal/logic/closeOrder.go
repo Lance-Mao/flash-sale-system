@@ -1,15 +1,16 @@
-﻿package logic
+package logic
 
 import (
 	"context"
 	"encoding/json"
-	"github.com/hibiken/asynq"
-	"github.com/pkg/errors"
+
 	"github.com/Lance-Mao/flash-sale-system/app/mqueue/cmd/job/internal/svc"
 	"github.com/Lance-Mao/flash-sale-system/app/mqueue/cmd/job/jobtype"
 	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/rpc/order"
 	"github.com/Lance-Mao/flash-sale-system/app/order/model"
 	"github.com/Lance-Mao/flash-sale-system/pkg/xerr"
+	"github.com/hibiken/asynq"
+	"github.com/pkg/errors"
 )
 
 var ErrCloseOrderFal = xerr.NewErrMsg("close order fail")

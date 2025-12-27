@@ -1,15 +1,16 @@
-﻿package logic
+package logic
 
 import (
 	"context"
-	"github.com/pkg/errors"
-	"github.com/zeromicro/go-zero/core/logx"
-	"github.com/zeromicro/go-zero/core/stores/sqlx"
+
 	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/rpc/internal/svc"
 	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/rpc/usercenter"
 	"github.com/Lance-Mao/flash-sale-system/app/usercenter/model"
 	"github.com/Lance-Mao/flash-sale-system/pkg/tool"
 	"github.com/Lance-Mao/flash-sale-system/pkg/xerr"
+	"github.com/pkg/errors"
+	"github.com/zeromicro/go-zero/core/logx"
+	"github.com/zeromicro/go-zero/core/stores/sqlx"
 )
 
 var ErrUserAlreadyRegisterError = xerr.NewErrMsg("user has been registered")

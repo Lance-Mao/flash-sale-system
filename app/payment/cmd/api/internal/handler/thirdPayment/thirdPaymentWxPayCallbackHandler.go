@@ -1,4 +1,4 @@
-﻿package thirdPayment
+package thirdPayment
 
 import (
 	"fmt"

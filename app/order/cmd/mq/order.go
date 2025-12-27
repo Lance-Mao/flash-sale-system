@@ -1,7 +1,8 @@
-﻿package main
+package main
 
 import (
 	"flag"
+
 	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/mq/internal/config"
 	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/mq/internal/listen"
 

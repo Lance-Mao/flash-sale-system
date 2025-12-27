@@ -1,10 +1,11 @@
-﻿package logic
+package logic
 
 import (
 	"context"
-	"github.com/hibiken/asynq"
+
 	"github.com/Lance-Mao/flash-sale-system/app/mqueue/cmd/job/internal/svc"
 	"github.com/Lance-Mao/flash-sale-system/app/mqueue/cmd/job/jobtype"
+	"github.com/hibiken/asynq"
 )
 
 type CronJob struct {

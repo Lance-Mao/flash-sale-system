@@ -1,14 +1,15 @@
-﻿package logic
+package logic
 
 import (
 	"context"
-	"github.com/pkg/errors"
-	"github.com/Lance-Mao/flash-sale-system/pkg/ctxdata"
 	"time"
 
-	"github.com/golang-jwt/jwt/v4"
+	"github.com/Lance-Mao/flash-sale-system/pkg/ctxdata"
+	"github.com/pkg/errors"
+
 	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/rpc/internal/svc"
 	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/rpc/pb"
+	"github.com/golang-jwt/jwt/v4"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )

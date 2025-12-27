@@ -1,7 +1,8 @@
-﻿package user
+package user
 
 import (
 	"context"
+
 	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/api/internal/svc"
 	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/api/internal/types"
 	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/rpc/usercenter"

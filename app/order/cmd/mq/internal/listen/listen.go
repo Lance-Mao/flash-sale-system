@@ -1,7 +1,8 @@
-﻿package listen
+package listen
 
 import (
 	"context"
+
 	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/mq/internal/config"
 	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/mq/internal/svc"
 

@@ -1,4 +1,4 @@
-﻿package homestayBussiness
+package homestayBussiness
 
 import (
 	"net/http"

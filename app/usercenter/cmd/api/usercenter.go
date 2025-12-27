@@ -1,8 +1,9 @@
-﻿package main
+package main
 
 import (
 	"flag"
 	"fmt"
+
 	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/api/internal/config"
 	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/api/internal/handler"
 	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/api/internal/svc"

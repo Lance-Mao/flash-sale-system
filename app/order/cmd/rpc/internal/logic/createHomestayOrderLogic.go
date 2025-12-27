@@ -1,12 +1,13 @@
-﻿package logic
+package logic
 
 import (
 	"context"
 	"encoding/json"
-	"github.com/hibiken/asynq"
-	"github.com/Lance-Mao/flash-sale-system/app/mqueue/cmd/job/jobtype"
 	"strings"
 	"time"
+
+	"github.com/Lance-Mao/flash-sale-system/app/mqueue/cmd/job/jobtype"
+	"github.com/hibiken/asynq"
 
 	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/rpc/internal/svc"
 	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/rpc/pb"

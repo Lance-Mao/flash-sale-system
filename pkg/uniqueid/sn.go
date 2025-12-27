@@ -1,9 +1,10 @@
-﻿package uniqueid
+package uniqueid
 
 import (
 	"fmt"
-	"github.com/Lance-Mao/flash-sale-system/pkg/tool"
 	"time"
+
+	"github.com/Lance-Mao/flash-sale-system/pkg/tool"
 )
 
 // 生成sn单号

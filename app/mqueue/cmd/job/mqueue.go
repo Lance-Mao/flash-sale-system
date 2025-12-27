@@ -1,12 +1,13 @@
-﻿package main
+package main
 
 import (
 	"context"
 	"flag"
-	"github.com/zeromicro/go-zero/core/logx"
+	"os"
+
 	"github.com/Lance-Mao/flash-sale-system/app/mqueue/cmd/job/internal/logic"
 	"github.com/Lance-Mao/flash-sale-system/app/mqueue/cmd/job/internal/svc"
-	"os"
+	"github.com/zeromicro/go-zero/core/logx"
 
 	"github.com/Lance-Mao/flash-sale-system/app/mqueue/cmd/job/internal/config"
 

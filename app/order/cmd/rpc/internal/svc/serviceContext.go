@@ -1,17 +1,17 @@
-﻿package svc
+package svc
 
 import (
-	"github.com/hibiken/asynq"
 	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/rpc/internal/config"
 	"github.com/Lance-Mao/flash-sale-system/app/order/model"
 	"github.com/Lance-Mao/flash-sale-system/app/travel/cmd/rpc/travel"
+	"github.com/hibiken/asynq"
 
 	"github.com/zeromicro/go-zero/core/stores/sqlx"
 	"github.com/zeromicro/go-zero/zrpc"
 )
 
 type ServiceContext struct {
-	Config config.Config
+	Config      config.Config
 	AsynqClient *asynq.Client
 
 	TravelRpc travel.Travel
@@ -21,8 +21,8 @@ type ServiceContext struct {
 
 func NewServiceContext(c config.Config) *ServiceContext {
 	return &ServiceContext{
-		Config: c,
-		AsynqClient:newAsynqClient(c),
+		Config:      c,
+		AsynqClient: newAsynqClient(c),
 
 		TravelRpc: travel.NewTravel(zrpc.MustNewClient(c.TravelRpcConf)),
 

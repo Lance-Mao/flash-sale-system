@@ -1,15 +1,11 @@
-﻿package logic
+package logic
 
 import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/golang-module/carbon/v2"
-	"github.com/hibiken/asynq"
-	"github.com/pkg/errors"
-	"github.com/silenceper/wechat/v2/miniprogram/subscribe"
-	"github.com/zeromicro/go-zero/core/logx"
-	"github.com/zeromicro/go-zero/core/service"
+	"time"
+
 	"github.com/Lance-Mao/flash-sale-system/app/mqueue/cmd/job/internal/svc"
 	"github.com/Lance-Mao/flash-sale-system/app/mqueue/cmd/job/jobtype"
 	"github.com/Lance-Mao/flash-sale-system/app/order/model"
@@ -19,7 +15,12 @@ import (
 	"github.com/Lance-Mao/flash-sale-system/pkg/tool"
 	"github.com/Lance-Mao/flash-sale-system/pkg/wxminisub"
 	"github.com/Lance-Mao/flash-sale-system/pkg/xerr"
-	"time"
+	"github.com/golang-module/carbon/v2"
+	"github.com/hibiken/asynq"
+	"github.com/pkg/errors"
+	"github.com/silenceper/wechat/v2/miniprogram/subscribe"
+	"github.com/zeromicro/go-zero/core/logx"
+	"github.com/zeromicro/go-zero/core/service"
 )
 
 var ErrPaySuccessNotifyFail = xerr.NewErrMsg("pay success notify user fail")

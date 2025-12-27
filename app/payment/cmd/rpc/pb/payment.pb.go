@@ -8,13 +8,14 @@ package pb
 
 import (
 	context "context"
+	reflect "reflect"
+	sync "sync"
+
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	reflect "reflect"
-	sync "sync"
 )
 
 const (
@@ -24,7 +25,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-//req 、resp
+// req 、resp
 type CreatePaymentReq struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -498,7 +499,7 @@ func (x *GetPaymentSuccessRefundByOrderSnResp) GetPaymentDetail() *PaymentDetail
 	return nil
 }
 
-//更新交易状态
+// 更新交易状态
 type UpdateTradeStateReq struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

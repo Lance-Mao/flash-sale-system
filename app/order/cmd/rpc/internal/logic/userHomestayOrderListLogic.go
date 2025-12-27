@@ -1,7 +1,8 @@
-﻿package logic
+package logic
 
 import (
 	"context"
+
 	"github.com/Masterminds/squirrel"
 
 	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/rpc/internal/svc"

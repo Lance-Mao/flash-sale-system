@@ -8,13 +8,14 @@ package pb
 
 import (
 	context "context"
+	reflect "reflect"
+	sync "sync"
+
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	reflect "reflect"
-	sync "sync"
 )
 
 const (
@@ -24,7 +25,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-//model
+// model
 type Homestay struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -176,7 +177,7 @@ func (x *Homestay) GetMarketHomestayPrice() int64 {
 	return 0
 }
 
-//req 、resp
+// req 、resp
 type HomestayDetailReq struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

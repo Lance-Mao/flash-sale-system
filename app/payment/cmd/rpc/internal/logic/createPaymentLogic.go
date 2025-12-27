@@ -1,7 +1,8 @@
-﻿package logic
+package logic
 
 import (
 	"context"
+
 	"github.com/Lance-Mao/flash-sale-system/app/payment/cmd/rpc/internal/svc"
 	"github.com/Lance-Mao/flash-sale-system/app/payment/cmd/rpc/pb"
 	"github.com/Lance-Mao/flash-sale-system/app/payment/model"

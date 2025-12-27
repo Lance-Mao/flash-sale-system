@@ -1,7 +1,8 @@
-﻿package homestay
+package homestay
 
 import (
 	"context"
+
 	"github.com/Masterminds/squirrel"
 
 	"github.com/Lance-Mao/flash-sale-system/app/travel/cmd/api/internal/svc"

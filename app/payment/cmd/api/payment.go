@@ -1,14 +1,14 @@
-﻿package main
+package main
 
 import (
 	"flag"
 	"fmt"
 
-	"github.com/zeromicro/go-zero/core/conf"
-	"github.com/zeromicro/go-zero/rest"
 	"github.com/Lance-Mao/flash-sale-system/app/payment/cmd/api/internal/config"
 	"github.com/Lance-Mao/flash-sale-system/app/payment/cmd/api/internal/handler"
 	"github.com/Lance-Mao/flash-sale-system/app/payment/cmd/api/internal/svc"
+	"github.com/zeromicro/go-zero/core/conf"
+	"github.com/zeromicro/go-zero/rest"
 )
 
 var configFile = flag.String("f", "etc/payment.yaml", "the config file")

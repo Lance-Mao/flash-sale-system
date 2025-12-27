@@ -1,7 +1,8 @@
-﻿package listen
+package listen
 
 import (
 	"context"
+
 	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/mq/internal/config"
 	kqMq "github.com/Lance-Mao/flash-sale-system/app/order/cmd/mq/internal/mqs/kq"
 	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/mq/internal/svc"
@@ -10,7 +11,7 @@ import (
 	"github.com/zeromicro/go-zero/core/service"
 )
 
-//pub sub use kq (kafka)
+// pub sub use kq (kafka)
 func KqMqs(c config.Config, ctx context.Context, svcContext *svc.ServiceContext) []service.Service {
 
 	return []service.Service{

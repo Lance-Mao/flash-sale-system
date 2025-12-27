@@ -1,4 +1,4 @@
-﻿package homestay
+package homestay
 
 import (
 	"net/http"

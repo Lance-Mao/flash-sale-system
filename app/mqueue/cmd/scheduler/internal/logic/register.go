@@ -1,7 +1,8 @@
-﻿package logic
+package logic
 
 import (
 	"context"
+
 	"github.com/Lance-Mao/flash-sale-system/app/mqueue/cmd/scheduler/internal/svc"
 )
 
@@ -17,10 +18,7 @@ func NewCronScheduler(ctx context.Context, svcCtx *svc.ServiceContext) *MqueueSc
 	}
 }
 
-func (l *MqueueScheduler) Register()  {
+func (l *MqueueScheduler) Register() {
 
 	l.settleRecordScheduler()
 }
-
-
-

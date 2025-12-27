@@ -1,4 +1,4 @@
-﻿package svc
+package svc
 
 import (
 	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/api/internal/config"

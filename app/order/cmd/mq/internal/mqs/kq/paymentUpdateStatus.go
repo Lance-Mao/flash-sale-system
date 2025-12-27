@@ -1,8 +1,9 @@
-﻿package kq
+package kq
 
 import (
 	"context"
 	"encoding/json"
+
 	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/mq/internal/svc"
 	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/rpc/order"
 	"github.com/Lance-Mao/flash-sale-system/app/order/model"

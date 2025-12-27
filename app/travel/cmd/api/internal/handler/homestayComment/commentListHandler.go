@@ -1,4 +1,4 @@
-﻿package homestayComment
+package homestayComment
 
 import (
 	"net/http"

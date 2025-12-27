@@ -1,0 +1,87 @@
+﻿# 生产环境配置
+replicaCount: 3
+
+env: prod
+
+image:
+  pullPolicy: Always
+
+resources:
+  api:
+    limits:
+      cpu: 2000m
+      memory: 1Gi
+    requests:
+      cpu: 500m
+      memory: 512Mi
+  rpc:
+    limits:
+      cpu: 2000m
+      memory: 1Gi
+    requests:
+      cpu: 500m
+      memory: 512Mi
+  mq:
+    limits:
+      cpu: 1000m
+      memory: 512Mi
+    requests:
+      cpu: 200m
+      memory: 256Mi
+
+autoscaling:
+  enabled: true
+  minReplicas: 3
+  maxReplicas: 20
+  targetCPUUtilizationPercentage: 70
+  targetMemoryUtilizationPercentage: 80
+
+ingress:
+  annotations:
+    nginx.ingress.kubernetes.io/rate-limit: "100"
+    nginx.ingress.kubernetes.io/limit-rps: "50"
+  hosts:
+    - host: api.flashsale.com
+      paths:
+        - path: /usercenter
+          pathType: Prefix
+          service: usercenter-api
+        - path: /travel
+          pathType: Prefix
+          service: travel-api
+        - path: /order
+          pathType: Prefix
+          service: order-api
+        - path: /payment
+          pathType: Prefix
+          service: payment-api
+  tls:
+    - secretName: flashsale-prod-tls
+      hosts:
+        - api.flashsale.com
+
+config:
+  mysql:
+    host: mysql-cluster.flashsale-prod.svc.cluster.local
+  redis:
+    host: redis-cluster.flashsale-prod.svc.cluster.local
+  kafka:
+    brokers: kafka-0.kafka-headless.flashsale-prod.svc.cluster.local:9092,kafka-1.kafka-headless.flashsale-prod.svc.cluster.local:9092,kafka-2.kafka-headless.flashsale-prod.svc.cluster.local:9092
+
+podDisruptionBudget:
+  enabled: true
+  minAvailable: 2
+
+# 生产环境使用节点亲和性
+affinity:
+  podAntiAffinity:
+    preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 100
+        podAffinityTerm:
+          labelSelector:
+            matchExpressions:
+              - key: app
+                operator: In
+                values:
+                  - flashsale
+          topologyKey: kubernetes.io/hostname

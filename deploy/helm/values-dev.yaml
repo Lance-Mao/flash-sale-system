@@ -1,0 +1,62 @@
+﻿# 开发环境配置
+replicaCount: 1
+
+env: dev
+
+image:
+  tag: "main-latest"
+
+resources:
+  api:
+    limits:
+      cpu: 500m
+      memory: 256Mi
+    requests:
+      cpu: 50m
+      memory: 64Mi
+  rpc:
+    limits:
+      cpu: 500m
+      memory: 256Mi
+    requests:
+      cpu: 50m
+      memory: 64Mi
+  mq:
+    limits:
+      cpu: 200m
+      memory: 128Mi
+    requests:
+      cpu: 20m
+      memory: 32Mi
+
+autoscaling:
+  enabled: false
+
+ingress:
+  hosts:
+    - host: dev-api.flashsale.com
+      paths:
+        - path: /usercenter
+          pathType: Prefix
+          service: usercenter-api
+        - path: /travel
+          pathType: Prefix
+          service: travel-api
+        - path: /order
+          pathType: Prefix
+          service: order-api
+        - path: /payment
+          pathType: Prefix
+          service: payment-api
+  tls:
+    - secretName: flashsale-dev-tls
+      hosts:
+        - dev-api.flashsale.com
+
+config:
+  mysql:
+    host: mysql-dev.flashsale.svc.cluster.local
+  redis:
+    host: redis-dev.flashsale.svc.cluster.local
+  kafka:
+    brokers: kafka-dev.flashsale.svc.cluster.local:9092

@@ -1,0 +1,36 @@
+Name: usercenter-api
+Host: 0.0.0.0
+Port: 1004
+Mode: dev
+
+#jwtAuth
+JwtAuth:
+  AccessSecret: ae0536f9-6450-4606-8e13-5a19ed505da0
+
+#监控 (可选，如果不需要可以注释掉)
+Prometheus:
+  Host: 0.0.0.0
+  Port: 4008
+  Path: /metrics
+
+#链路追踪 (可选，如果不需要可以注释掉)
+Telemetry:
+  Name: usercenter-api
+  Endpoint: http://localhost:14268/api/traces
+  Sampler: 1.0
+  Batcher: jaeger
+
+Log:
+  ServiceName: usercenter-api
+  Level: info  # 本地开发改为info方便调试
+
+#WxMiniConf (如果没有微信小程序，可以保持默认)
+WxMiniConf:
+  AppId: wx2add729fadddddd
+  Secret: 20365395b3de9b2a9351ddddddd
+
+#rpc service - 连接本地RPC服务
+UsercenterRpcConf:
+  Endpoints:
+    - 127.0.0.1:2004
+  NonBlock: true

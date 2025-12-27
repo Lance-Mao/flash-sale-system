@@ -1,0 +1,17 @@
+﻿apiVersion: v2
+name: flashsale
+description: A microservices travel booking system based on go-zero
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
+keywords:
+  - go-zero
+  - microservices
+  - travel
+  - booking
+home: https://github.com/yourusername/flash-sale-system
+sources:
+  - https://github.com/yourusername/flash-sale-system
+maintainers:
+  - name: Your Name
+    email: your.email@example.com

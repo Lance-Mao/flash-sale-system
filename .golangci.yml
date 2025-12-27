@@ -1,0 +1,71 @@
+run:
+  timeout: 5m
+  tests: true
+  modules-download-mode: readonly
+
+linters:
+  enable:
+    - errcheck      # 检查未处理的错误
+    - gosimple      # 简化代码
+    - govet         # go vet
+    - ineffassign   # 检测无效赋值
+    - staticcheck   # 静态分析
+    - unused        # 检测未使用的常量、变量、函数
+    - gofmt         # 检查代码格式
+    - goimports     # 检查 import 格式
+    - misspell      # 拼写检查
+    - revive        # 替代 golint
+    - gosec         # 安全检查
+    - gocritic      # 代码审查
+    - gocyclo       # 圈复杂度
+    - dupl          # 重复代码检查
+    - bodyclose     # HTTP body 关闭检查
+    - errorlint     # 错误处理检查
+    - exportloopref # 循环变量引用检查
+
+linters-settings:
+  gocyclo:
+    min-complexity: 15
+
+  dupl:
+    threshold: 100
+
+  gocritic:
+    enabled-tags:
+      - diagnostic
+      - performance
+      - style
+
+  revive:
+    rules:
+      - name: exported
+        disabled: true
+      - name: package-comments
+        disabled: true
+
+issues:
+  exclude-rules:
+    # 忽略测试文件的某些检查
+    - path: _test\.go
+      linters:
+        - gocyclo
+        - errcheck
+        - dupl
+        - gosec
+
+    # 忽略生成的代码
+    - path: .*\.pb\.go
+      linters:
+        - all
+
+    - path: types/types\.go
+      linters:
+        - all
+
+  max-issues-per-linter: 0
+  max-same-issues: 0
+
+output:
+  format: colored-line-number
+  print-issued-lines: true
+  print-linter-name: true

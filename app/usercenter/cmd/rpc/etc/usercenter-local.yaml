@@ -1,0 +1,41 @@
+﻿Name: usercenter-rpc
+ListenOn: 0.0.0.0:2004
+Mode: dev
+
+#jwtAuth
+JwtAuth:
+  AccessSecret: ae0536f9-6450-4606-8e13-5a19ed505da0
+  AccessExpire: 31536000
+
+#Monitoring (可选，如果不需要可以注释掉)
+Prometheus:
+  Host: 0.0.0.0
+  Port: 4009
+  Path: /metrics
+
+#Link Tracking (可选，如果不需要可以注释掉)
+Telemetry:
+  Name: usercenter-rpc
+  Endpoint: http://localhost:14268/api/traces
+  Sampler: 1.0
+  Batcher: jaeger
+
+Log:
+  ServiceName: usercenter-rpc
+  Level: info  # 本地开发改为info方便调试
+
+# 本地Redis配置 - 使用Docker映射的端口
+Redis:
+  Host: localhost:36379
+  Type: node
+  Pass: G62m50oigInC30sf
+  Key: usercenter-rpc
+
+# 本地MySQL配置 - 使用Docker映射的端口
+DB:
+  DataSource: root:PXDN93VRKUm8TeE7@tcp(localhost:33069)/flashsale_usercenter?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
+
+# 本地Cache配置
+Cache:
+  - Host: localhost:36379
+    Pass: G62m50oigInC30sf

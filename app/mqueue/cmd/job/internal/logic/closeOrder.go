@@ -5,11 +5,11 @@ import (
 	"encoding/json"
 	"github.com/hibiken/asynq"
 	"github.com/pkg/errors"
-	"flashsale/app/mqueue/cmd/job/internal/svc"
-	"flashsale/app/mqueue/cmd/job/jobtype"
-	"flashsale/app/order/cmd/rpc/order"
-	"flashsale/app/order/model"
-	"flashsale/pkg/xerr"
+	"github.com/Lance-Mao/flash-sale-system/app/mqueue/cmd/job/internal/svc"
+	"github.com/Lance-Mao/flash-sale-system/app/mqueue/cmd/job/jobtype"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/rpc/order"
+	"github.com/Lance-Mao/flash-sale-system/app/order/model"
+	"github.com/Lance-Mao/flash-sale-system/pkg/xerr"
 )
 
 var ErrCloseOrderFal = xerr.NewErrMsg("close order fail")

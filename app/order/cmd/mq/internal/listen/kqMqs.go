@@ -2,9 +2,9 @@
 
 import (
 	"context"
-	"flashsale/app/order/cmd/mq/internal/config"
-	kqMq "flashsale/app/order/cmd/mq/internal/mqs/kq"
-	"flashsale/app/order/cmd/mq/internal/svc"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/mq/internal/config"
+	kqMq "github.com/Lance-Mao/flash-sale-system/app/order/cmd/mq/internal/mqs/kq"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/mq/internal/svc"
 
 	"github.com/zeromicro/go-queue/kq"
 	"github.com/zeromicro/go-zero/core/service"

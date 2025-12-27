@@ -4,10 +4,10 @@ package handler
 import (
 	"net/http"
 
-	homestay "flashsale/app/travel/cmd/api/internal/handler/homestay"
-	homestayBussiness "flashsale/app/travel/cmd/api/internal/handler/homestayBussiness"
-	homestayComment "flashsale/app/travel/cmd/api/internal/handler/homestayComment"
-	"flashsale/app/travel/cmd/api/internal/svc"
+	homestay "github.com/Lance-Mao/flash-sale-system/app/travel/cmd/api/internal/handler/homestay"
+	homestayBussiness "github.com/Lance-Mao/flash-sale-system/app/travel/cmd/api/internal/handler/homestayBussiness"
+	homestayComment "github.com/Lance-Mao/flash-sale-system/app/travel/cmd/api/internal/handler/homestayComment"
+	"github.com/Lance-Mao/flash-sale-system/app/travel/cmd/api/internal/svc"
 
 	"github.com/zeromicro/go-zero/rest"
 )

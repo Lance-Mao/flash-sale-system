@@ -6,9 +6,9 @@ import (
 
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/rest"
-	"flashsale/app/travel/cmd/api/internal/config"
-	"flashsale/app/travel/cmd/api/internal/handler"
-	"flashsale/app/travel/cmd/api/internal/svc"
+	"github.com/Lance-Mao/flash-sale-system/app/travel/cmd/api/internal/config"
+	"github.com/Lance-Mao/flash-sale-system/app/travel/cmd/api/internal/handler"
+	"github.com/Lance-Mao/flash-sale-system/app/travel/cmd/api/internal/svc"
 )
 
 var configFile = flag.String("f", "etc/travel.yaml", "the config file")

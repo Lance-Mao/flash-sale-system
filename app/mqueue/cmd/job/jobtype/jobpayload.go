@@ -1,6 +1,6 @@
 ﻿package jobtype
 
-import "flashsale/app/order/model"
+import "github.com/Lance-Mao/flash-sale-system/app/order/model"
 
 // DeferCloseHomestayOrderPayload defer close homestay order
 type DeferCloseHomestayOrderPayload struct {

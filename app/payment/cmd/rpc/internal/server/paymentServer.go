@@ -6,9 +6,9 @@ package server
 import (
 	"context"
 
-	"flashsale/app/payment/cmd/rpc/internal/logic"
-	"flashsale/app/payment/cmd/rpc/internal/svc"
-	"flashsale/app/payment/cmd/rpc/pb"
+	"github.com/Lance-Mao/flash-sale-system/app/payment/cmd/rpc/internal/logic"
+	"github.com/Lance-Mao/flash-sale-system/app/payment/cmd/rpc/internal/svc"
+	"github.com/Lance-Mao/flash-sale-system/app/payment/cmd/rpc/pb"
 )
 
 type PaymentServer struct {

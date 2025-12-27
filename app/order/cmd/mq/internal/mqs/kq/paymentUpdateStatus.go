@@ -3,12 +3,12 @@
 import (
 	"context"
 	"encoding/json"
-	"flashsale/app/order/cmd/mq/internal/svc"
-	"flashsale/app/order/cmd/rpc/order"
-	"flashsale/app/order/model"
-	paymentModel "flashsale/app/payment/model"
-	"flashsale/pkg/kqueue"
-	"flashsale/pkg/xerr"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/mq/internal/svc"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/rpc/order"
+	"github.com/Lance-Mao/flash-sale-system/app/order/model"
+	paymentModel "github.com/Lance-Mao/flash-sale-system/app/payment/model"
+	"github.com/Lance-Mao/flash-sale-system/pkg/kqueue"
+	"github.com/Lance-Mao/flash-sale-system/pkg/xerr"
 
 	"github.com/pkg/errors"
 	"github.com/zeromicro/go-zero/core/logx"

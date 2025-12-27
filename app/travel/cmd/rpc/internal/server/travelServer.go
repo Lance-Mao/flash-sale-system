@@ -6,9 +6,9 @@ package server
 import (
 	"context"
 
-	"flashsale/app/travel/cmd/rpc/internal/logic"
-	"flashsale/app/travel/cmd/rpc/internal/svc"
-	"flashsale/app/travel/cmd/rpc/pb"
+	"github.com/Lance-Mao/flash-sale-system/app/travel/cmd/rpc/internal/logic"
+	"github.com/Lance-Mao/flash-sale-system/app/travel/cmd/rpc/internal/svc"
+	"github.com/Lance-Mao/flash-sale-system/app/travel/cmd/rpc/pb"
 )
 
 type TravelServer struct {

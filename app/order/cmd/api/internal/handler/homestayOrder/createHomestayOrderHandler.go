@@ -3,10 +3,10 @@
 import (
 	"net/http"
 
-	"flashsale/app/order/cmd/api/internal/logic/homestayOrder"
-	"flashsale/app/order/cmd/api/internal/svc"
-	"flashsale/app/order/cmd/api/internal/types"
-	"flashsale/pkg/result"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/api/internal/logic/homestayOrder"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/api/internal/svc"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/api/internal/types"
+	"github.com/Lance-Mao/flash-sale-system/pkg/result"
 
 	"github.com/zeromicro/go-zero/rest/httpx"
 )

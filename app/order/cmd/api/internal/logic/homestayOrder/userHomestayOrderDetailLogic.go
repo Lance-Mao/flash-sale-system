@@ -3,14 +3,14 @@
 import (
 	"context"
 
-	"flashsale/app/order/cmd/api/internal/svc"
-	"flashsale/app/order/cmd/api/internal/types"
-	"flashsale/app/order/cmd/rpc/order"
-	"flashsale/app/order/model"
-	"flashsale/app/payment/cmd/rpc/payment"
-	"flashsale/pkg/ctxdata"
-	"flashsale/pkg/tool"
-	"flashsale/pkg/xerr"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/api/internal/svc"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/api/internal/types"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/rpc/order"
+	"github.com/Lance-Mao/flash-sale-system/app/order/model"
+	"github.com/Lance-Mao/flash-sale-system/app/payment/cmd/rpc/payment"
+	"github.com/Lance-Mao/flash-sale-system/pkg/ctxdata"
+	"github.com/Lance-Mao/flash-sale-system/pkg/tool"
+	"github.com/Lance-Mao/flash-sale-system/pkg/xerr"
 
 	"github.com/jinzhu/copier"
 	"github.com/pkg/errors"

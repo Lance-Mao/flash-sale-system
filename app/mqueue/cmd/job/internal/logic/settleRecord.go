@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/hibiken/asynq"
-	"flashsale/app/mqueue/cmd/job/internal/svc"
+	"github.com/Lance-Mao/flash-sale-system/app/mqueue/cmd/job/internal/svc"
 )
 
 

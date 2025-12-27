@@ -2,9 +2,9 @@
 
 import (
 	"github.com/hibiken/asynq"
-	"flashsale/app/order/cmd/rpc/internal/config"
-	"flashsale/app/order/model"
-	"flashsale/app/travel/cmd/rpc/travel"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/rpc/internal/config"
+	"github.com/Lance-Mao/flash-sale-system/app/order/model"
+	"github.com/Lance-Mao/flash-sale-system/app/travel/cmd/rpc/travel"
 
 	"github.com/zeromicro/go-zero/core/stores/sqlx"
 	"github.com/zeromicro/go-zero/zrpc"

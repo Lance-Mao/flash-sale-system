@@ -5,11 +5,11 @@ import (
 	"github.com/pkg/errors"
 	"github.com/zeromicro/go-zero/core/logx"
 	"github.com/zeromicro/go-zero/core/stores/sqlx"
-	"flashsale/app/usercenter/cmd/rpc/internal/svc"
-	"flashsale/app/usercenter/cmd/rpc/usercenter"
-	"flashsale/app/usercenter/model"
-	"flashsale/pkg/tool"
-	"flashsale/pkg/xerr"
+	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/rpc/internal/svc"
+	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/rpc/usercenter"
+	"github.com/Lance-Mao/flash-sale-system/app/usercenter/model"
+	"github.com/Lance-Mao/flash-sale-system/pkg/tool"
+	"github.com/Lance-Mao/flash-sale-system/pkg/xerr"
 )
 
 var ErrUserAlreadyRegisterError = xerr.NewErrMsg("user has been registered")

@@ -4,12 +4,12 @@ import (
 	"context"
 	"encoding/json"
 	"github.com/hibiken/asynq"
-	"flashsale/app/mqueue/cmd/job/jobtype"
+	"github.com/Lance-Mao/flash-sale-system/app/mqueue/cmd/job/jobtype"
 
-	"flashsale/app/order/cmd/rpc/internal/svc"
-	"flashsale/app/order/cmd/rpc/pb"
-	"flashsale/app/order/model"
-	"flashsale/pkg/xerr"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/rpc/internal/svc"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/rpc/pb"
+	"github.com/Lance-Mao/flash-sale-system/app/order/model"
+	"github.com/Lance-Mao/flash-sale-system/pkg/xerr"
 
 	"github.com/pkg/errors"
 	"github.com/zeromicro/go-zero/core/logx"

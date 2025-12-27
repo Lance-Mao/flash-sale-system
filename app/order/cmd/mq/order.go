@@ -2,8 +2,8 @@
 
 import (
 	"flag"
-	"flashsale/app/order/cmd/mq/internal/config"
-	"flashsale/app/order/cmd/mq/internal/listen"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/mq/internal/config"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/mq/internal/listen"
 
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/core/service"

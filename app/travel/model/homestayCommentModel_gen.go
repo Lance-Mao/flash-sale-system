@@ -6,7 +6,7 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
-	"flashsale/deploy/script/mysql/genModel"
+	"github.com/Lance-Mao/flash-sale-system/deploy/script/mysql/genModel"
 	"strings"
 
 	"time"
@@ -18,7 +18,7 @@ import (
 	"github.com/zeromicro/go-zero/core/stores/sqlc"
 	"github.com/zeromicro/go-zero/core/stores/sqlx"
 	"github.com/zeromicro/go-zero/core/stringx"
-	"flashsale/pkg/globalkey"
+	"github.com/Lance-Mao/flash-sale-system/pkg/globalkey"
 )
 
 var (

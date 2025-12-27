@@ -3,9 +3,9 @@
 import (
 	"flag"
 	"fmt"
-	"flashsale/app/usercenter/cmd/api/internal/config"
-	"flashsale/app/usercenter/cmd/api/internal/handler"
-	"flashsale/app/usercenter/cmd/api/internal/svc"
+	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/api/internal/config"
+	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/api/internal/handler"
+	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/api/internal/svc"
 
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/rest"

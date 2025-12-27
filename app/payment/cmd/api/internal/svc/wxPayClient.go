@@ -2,8 +2,8 @@
 
 import (
 	"context"
-	"flashsale/app/payment/cmd/api/internal/config"
-	"flashsale/pkg/xerr"
+	"github.com/Lance-Mao/flash-sale-system/app/payment/cmd/api/internal/config"
+	"github.com/Lance-Mao/flash-sale-system/pkg/xerr"
 
 	"github.com/pkg/errors"
 	"github.com/wechatpay-apiv3/wechatpay-go/core"

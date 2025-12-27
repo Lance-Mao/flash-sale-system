@@ -5,9 +5,9 @@ import (
 
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/rest"
-	"flashsale/app/order/cmd/api/internal/config"
-	"flashsale/app/order/cmd/api/internal/handler"
-	"flashsale/app/order/cmd/api/internal/svc"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/api/internal/config"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/api/internal/handler"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/api/internal/svc"
 )
 
 var configFile = flag.String("f", "etc/order.yaml", "the config file")

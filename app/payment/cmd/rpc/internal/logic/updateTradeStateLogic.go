@@ -3,13 +3,13 @@
 import (
 	"context"
 	"encoding/json"
-	"flashsale/pkg/kqueue"
+	"github.com/Lance-Mao/flash-sale-system/pkg/kqueue"
 	"time"
 
-	"flashsale/app/payment/cmd/rpc/internal/svc"
-	"flashsale/app/payment/cmd/rpc/pb"
-	"flashsale/app/payment/model"
-	"flashsale/pkg/xerr"
+	"github.com/Lance-Mao/flash-sale-system/app/payment/cmd/rpc/internal/svc"
+	"github.com/Lance-Mao/flash-sale-system/app/payment/cmd/rpc/pb"
+	"github.com/Lance-Mao/flash-sale-system/app/payment/model"
+	"github.com/Lance-Mao/flash-sale-system/pkg/xerr"
 
 	"github.com/pkg/errors"
 	"github.com/zeromicro/go-zero/core/logx"

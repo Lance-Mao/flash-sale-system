@@ -1,10 +1,10 @@
 ﻿package svc
 
 import (
-	"flashsale/app/travel/cmd/api/internal/config"
-	"flashsale/app/travel/cmd/rpc/travel"
-	"flashsale/app/travel/model"
-	"flashsale/app/usercenter/cmd/rpc/usercenter"
+	"github.com/Lance-Mao/flash-sale-system/app/travel/cmd/api/internal/config"
+	"github.com/Lance-Mao/flash-sale-system/app/travel/cmd/rpc/travel"
+	"github.com/Lance-Mao/flash-sale-system/app/travel/model"
+	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/rpc/usercenter"
 
 	"github.com/zeromicro/go-zero/core/stores/sqlx"
 	"github.com/zeromicro/go-zero/zrpc"

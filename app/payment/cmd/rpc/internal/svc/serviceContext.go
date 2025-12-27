@@ -2,8 +2,8 @@
 
 import (
 	"github.com/zeromicro/go-queue/kq"
-	"flashsale/app/payment/cmd/rpc/internal/config"
-	"flashsale/app/payment/model"
+	"github.com/Lance-Mao/flash-sale-system/app/payment/cmd/rpc/internal/config"
+	"github.com/Lance-Mao/flash-sale-system/app/payment/model"
 
 	"github.com/zeromicro/go-zero/core/stores/sqlx"
 )

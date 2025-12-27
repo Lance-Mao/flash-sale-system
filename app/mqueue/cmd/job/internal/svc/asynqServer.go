@@ -3,7 +3,7 @@
 import (
 	"fmt"
 	"github.com/hibiken/asynq"
-	"flashsale/app/mqueue/cmd/job/internal/config"
+	"github.com/Lance-Mao/flash-sale-system/app/mqueue/cmd/job/internal/config"
 )
 
 func newAsynqServer(c config.Config) *asynq.Server {

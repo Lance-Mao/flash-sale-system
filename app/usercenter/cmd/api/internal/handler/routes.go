@@ -4,8 +4,8 @@ package handler
 import (
 	"net/http"
 
-	user "flashsale/app/usercenter/cmd/api/internal/handler/user"
-	"flashsale/app/usercenter/cmd/api/internal/svc"
+	user "github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/api/internal/handler/user"
+	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/api/internal/svc"
 
 	"github.com/zeromicro/go-zero/rest"
 )

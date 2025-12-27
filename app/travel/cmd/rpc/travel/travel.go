@@ -6,7 +6,7 @@ package travel
 import (
 	"context"
 
-	"flashsale/app/travel/cmd/rpc/pb"
+	"github.com/Lance-Mao/flash-sale-system/app/travel/cmd/rpc/pb"
 
 	"github.com/zeromicro/go-zero/zrpc"
 	"google.golang.org/grpc"

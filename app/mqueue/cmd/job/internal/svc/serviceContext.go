@@ -4,9 +4,9 @@ import (
 	"github.com/hibiken/asynq"
 	"github.com/silenceper/wechat/v2/miniprogram"
 	"github.com/zeromicro/go-zero/zrpc"
-	"flashsale/app/mqueue/cmd/job/internal/config"
-	"flashsale/app/order/cmd/rpc/order"
-	"flashsale/app/usercenter/cmd/rpc/usercenter"
+	"github.com/Lance-Mao/flash-sale-system/app/mqueue/cmd/job/internal/config"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/rpc/order"
+	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/rpc/usercenter"
 )
 
 type ServiceContext struct {

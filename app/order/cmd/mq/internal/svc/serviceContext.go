@@ -1,9 +1,9 @@
 ﻿package svc
 
 import (
-	"flashsale/app/order/cmd/mq/internal/config"
-	"flashsale/app/order/cmd/rpc/order"
-	"flashsale/app/usercenter/cmd/rpc/usercenter"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/mq/internal/config"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/rpc/order"
+	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/rpc/usercenter"
 
 	"github.com/zeromicro/go-zero/zrpc"
 )

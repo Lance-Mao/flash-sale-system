@@ -1,8 +1,8 @@
 ﻿package svc
 
 import (
-	"flashsale/app/usercenter/cmd/rpc/internal/config"
-	"flashsale/app/usercenter/model"
+	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/rpc/internal/config"
+	"github.com/Lance-Mao/flash-sale-system/app/usercenter/model"
 
 	"github.com/zeromicro/go-zero/core/stores/redis"
 	"github.com/zeromicro/go-zero/core/stores/sqlx"

@@ -4,10 +4,10 @@ import (
 	"context"
 	"github.com/Masterminds/squirrel"
 
-	"flashsale/app/order/cmd/rpc/internal/svc"
-	"flashsale/app/order/cmd/rpc/pb"
-	"flashsale/app/order/model"
-	"flashsale/pkg/xerr"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/rpc/internal/svc"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/rpc/pb"
+	"github.com/Lance-Mao/flash-sale-system/app/order/model"
+	"github.com/Lance-Mao/flash-sale-system/pkg/xerr"
 
 	"github.com/jinzhu/copier"
 	"github.com/pkg/errors"

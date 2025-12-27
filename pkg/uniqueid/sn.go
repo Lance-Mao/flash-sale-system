@@ -2,7 +2,7 @@
 
 import (
 	"fmt"
-	"flashsale/pkg/tool"
+	"github.com/Lance-Mao/flash-sale-system/pkg/tool"
 	"time"
 )
 

@@ -4,11 +4,11 @@ import (
 	"context"
 	"fmt"
 
-	"flashsale/app/usercenter/cmd/api/internal/svc"
-	"flashsale/app/usercenter/cmd/api/internal/types"
-	"flashsale/app/usercenter/cmd/rpc/usercenter"
-	usercenterModel "flashsale/app/usercenter/model"
-	"flashsale/pkg/xerr"
+	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/api/internal/svc"
+	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/api/internal/types"
+	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/rpc/usercenter"
+	usercenterModel "github.com/Lance-Mao/flash-sale-system/app/usercenter/model"
+	"github.com/Lance-Mao/flash-sale-system/pkg/xerr"
 
 	"github.com/pkg/errors"
 	wechat "github.com/silenceper/wechat/v2"

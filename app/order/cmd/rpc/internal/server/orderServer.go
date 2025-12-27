@@ -6,9 +6,9 @@ package server
 import (
 	"context"
 
-	"flashsale/app/order/cmd/rpc/internal/logic"
-	"flashsale/app/order/cmd/rpc/internal/svc"
-	"flashsale/app/order/cmd/rpc/pb"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/rpc/internal/logic"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/rpc/internal/svc"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/rpc/pb"
 )
 
 type OrderServer struct {

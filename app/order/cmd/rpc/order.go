@@ -4,11 +4,11 @@ import (
 	"flag"
 	"fmt"
 
-	"flashsale/app/order/cmd/rpc/internal/config"
-	"flashsale/app/order/cmd/rpc/internal/server"
-	"flashsale/app/order/cmd/rpc/internal/svc"
-	"flashsale/app/order/cmd/rpc/pb"
-	"flashsale/pkg/interceptor/rpcserver"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/rpc/internal/config"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/rpc/internal/server"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/rpc/internal/svc"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/rpc/pb"
+	"github.com/Lance-Mao/flash-sale-system/pkg/interceptor/rpcserver"
 
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/core/service"

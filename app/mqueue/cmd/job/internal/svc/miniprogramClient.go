@@ -5,7 +5,7 @@ import (
 	"github.com/silenceper/wechat/v2/cache"
 	"github.com/silenceper/wechat/v2/miniprogram"
 	miniConfig "github.com/silenceper/wechat/v2/miniprogram/config"
-	"flashsale/app/mqueue/cmd/job/internal/config"
+	"github.com/Lance-Mao/flash-sale-system/app/mqueue/cmd/job/internal/config"
 )
 
 //小程序客户端

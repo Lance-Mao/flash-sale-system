@@ -3,10 +3,10 @@
 import (
 	"context"
 
-	"flashsale/app/usercenter/cmd/api/internal/svc"
-	"flashsale/app/usercenter/cmd/api/internal/types"
-	"flashsale/app/usercenter/cmd/rpc/usercenter"
-	"flashsale/pkg/ctxdata"
+	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/api/internal/svc"
+	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/api/internal/types"
+	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/rpc/usercenter"
+	"github.com/Lance-Mao/flash-sale-system/pkg/ctxdata"
 
 	"github.com/jinzhu/copier"
 	"github.com/zeromicro/go-zero/core/logx"

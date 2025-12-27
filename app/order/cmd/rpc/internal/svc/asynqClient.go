@@ -2,7 +2,7 @@
 
 import (
 	"github.com/hibiken/asynq"
-	"flashsale/app/order/cmd/rpc/internal/config"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/rpc/internal/config"
 )
 
 //create asynq client.

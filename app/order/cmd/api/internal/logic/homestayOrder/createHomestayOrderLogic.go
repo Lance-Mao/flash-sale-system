@@ -2,13 +2,13 @@
 
 import (
 	"context"
-	"flashsale/app/travel/cmd/rpc/pb"
-	"flashsale/pkg/ctxdata"
+	"github.com/Lance-Mao/flash-sale-system/app/travel/cmd/rpc/pb"
+	"github.com/Lance-Mao/flash-sale-system/pkg/ctxdata"
 
-	"flashsale/app/order/cmd/api/internal/svc"
-	"flashsale/app/order/cmd/api/internal/types"
-	"flashsale/app/order/cmd/rpc/order"
-	"flashsale/pkg/xerr"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/api/internal/svc"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/api/internal/types"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/rpc/order"
+	"github.com/Lance-Mao/flash-sale-system/pkg/xerr"
 
 	"github.com/pkg/errors"
 	"github.com/zeromicro/go-zero/core/logx"

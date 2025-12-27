@@ -6,7 +6,7 @@ package payment
 import (
 	"context"
 
-	"flashsale/app/payment/cmd/rpc/pb"
+	"github.com/Lance-Mao/flash-sale-system/app/payment/cmd/rpc/pb"
 
 	"github.com/zeromicro/go-zero/zrpc"
 	"google.golang.org/grpc"

@@ -1,10 +1,10 @@
 ﻿package svc
 
 import (
-	"flashsale/app/order/cmd/rpc/order"
-	"flashsale/app/payment/cmd/api/internal/config"
-	"flashsale/app/payment/cmd/rpc/payment"
-	"flashsale/app/usercenter/cmd/rpc/usercenter"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/rpc/order"
+	"github.com/Lance-Mao/flash-sale-system/app/payment/cmd/api/internal/config"
+	"github.com/Lance-Mao/flash-sale-system/app/payment/cmd/rpc/payment"
+	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/rpc/usercenter"
 
 	"github.com/wechatpay-apiv3/wechatpay-go/core"
 	"github.com/zeromicro/go-zero/zrpc"

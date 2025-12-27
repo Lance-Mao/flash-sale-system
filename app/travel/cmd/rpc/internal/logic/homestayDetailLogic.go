@@ -3,10 +3,10 @@
 import (
 	"context"
 
-	"flashsale/app/travel/cmd/rpc/internal/svc"
-	"flashsale/app/travel/cmd/rpc/pb"
-	"flashsale/app/travel/model"
-	"flashsale/pkg/xerr"
+	"github.com/Lance-Mao/flash-sale-system/app/travel/cmd/rpc/internal/svc"
+	"github.com/Lance-Mao/flash-sale-system/app/travel/cmd/rpc/pb"
+	"github.com/Lance-Mao/flash-sale-system/app/travel/model"
+	"github.com/Lance-Mao/flash-sale-system/pkg/xerr"
 
 	"github.com/jinzhu/copier"
 	"github.com/pkg/errors"

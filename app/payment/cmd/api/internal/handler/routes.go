@@ -4,8 +4,8 @@ package handler
 import (
 	"net/http"
 
-	thirdPayment "flashsale/app/payment/cmd/api/internal/handler/thirdPayment"
-	"flashsale/app/payment/cmd/api/internal/svc"
+	thirdPayment "github.com/Lance-Mao/flash-sale-system/app/payment/cmd/api/internal/handler/thirdPayment"
+	"github.com/Lance-Mao/flash-sale-system/app/payment/cmd/api/internal/svc"
 
 	"github.com/zeromicro/go-zero/rest"
 )

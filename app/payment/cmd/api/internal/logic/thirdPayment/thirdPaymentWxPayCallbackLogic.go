@@ -4,11 +4,11 @@ import (
 	"context"
 	"net/http"
 
-	"flashsale/app/payment/cmd/api/internal/svc"
-	"flashsale/app/payment/cmd/api/internal/types"
-	"flashsale/app/payment/cmd/rpc/payment"
-	"flashsale/app/payment/model"
-	"flashsale/pkg/xerr"
+	"github.com/Lance-Mao/flash-sale-system/app/payment/cmd/api/internal/svc"
+	"github.com/Lance-Mao/flash-sale-system/app/payment/cmd/api/internal/types"
+	"github.com/Lance-Mao/flash-sale-system/app/payment/cmd/rpc/payment"
+	"github.com/Lance-Mao/flash-sale-system/app/payment/model"
+	"github.com/Lance-Mao/flash-sale-system/pkg/xerr"
 
 	"github.com/pkg/errors"
 	"github.com/wechatpay-apiv3/wechatpay-go/core/auth/verifiers"

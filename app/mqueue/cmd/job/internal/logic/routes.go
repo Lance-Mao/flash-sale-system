@@ -3,8 +3,8 @@
 import (
 	"context"
 	"github.com/hibiken/asynq"
-	"flashsale/app/mqueue/cmd/job/internal/svc"
-	"flashsale/app/mqueue/cmd/job/jobtype"
+	"github.com/Lance-Mao/flash-sale-system/app/mqueue/cmd/job/internal/svc"
+	"github.com/Lance-Mao/flash-sale-system/app/mqueue/cmd/job/jobtype"
 )
 
 type CronJob struct {

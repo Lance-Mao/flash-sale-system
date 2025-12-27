@@ -2,8 +2,8 @@
 
 import (
 	"context"
-	"flashsale/app/order/cmd/mq/internal/config"
-	"flashsale/app/order/cmd/mq/internal/svc"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/mq/internal/config"
+	"github.com/Lance-Mao/flash-sale-system/app/order/cmd/mq/internal/svc"
 
 	"github.com/zeromicro/go-zero/core/service"
 )

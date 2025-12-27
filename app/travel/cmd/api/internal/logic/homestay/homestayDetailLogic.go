@@ -2,11 +2,11 @@
 
 import (
 	"context"
-	"flashsale/app/travel/cmd/api/internal/svc"
-	"flashsale/app/travel/cmd/api/internal/types"
-	"flashsale/app/travel/cmd/rpc/travel"
-	"flashsale/pkg/tool"
-	"flashsale/pkg/xerr"
+	"github.com/Lance-Mao/flash-sale-system/app/travel/cmd/api/internal/svc"
+	"github.com/Lance-Mao/flash-sale-system/app/travel/cmd/api/internal/types"
+	"github.com/Lance-Mao/flash-sale-system/app/travel/cmd/rpc/travel"
+	"github.com/Lance-Mao/flash-sale-system/pkg/tool"
+	"github.com/Lance-Mao/flash-sale-system/pkg/xerr"
 
 	"github.com/jinzhu/copier"
 	"github.com/pkg/errors"

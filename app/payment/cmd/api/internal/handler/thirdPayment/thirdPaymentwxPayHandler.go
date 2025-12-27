@@ -3,10 +3,10 @@
 import (
 	"net/http"
 
-	"flashsale/app/payment/cmd/api/internal/logic/thirdPayment"
-	"flashsale/app/payment/cmd/api/internal/svc"
-	"flashsale/app/payment/cmd/api/internal/types"
-	"flashsale/pkg/result"
+	"github.com/Lance-Mao/flash-sale-system/app/payment/cmd/api/internal/logic/thirdPayment"
+	"github.com/Lance-Mao/flash-sale-system/app/payment/cmd/api/internal/svc"
+	"github.com/Lance-Mao/flash-sale-system/app/payment/cmd/api/internal/types"
+	"github.com/Lance-Mao/flash-sale-system/pkg/result"
 
 	"github.com/zeromicro/go-zero/rest/httpx"
 )

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/hibiken/asynq"
 	"github.com/zeromicro/go-zero/core/logx"
-	"flashsale/app/mqueue/cmd/job/jobtype"
+	"github.com/Lance-Mao/flash-sale-system/app/mqueue/cmd/job/jobtype"
 )
 
 // scheduler job ------> flash-sale-system/app/mqueue/cmd/job/internal/logic/settleRecord.go.

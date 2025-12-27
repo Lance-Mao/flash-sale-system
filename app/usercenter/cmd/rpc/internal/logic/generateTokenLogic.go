@@ -3,12 +3,12 @@
 import (
 	"context"
 	"github.com/pkg/errors"
-	"flashsale/pkg/ctxdata"
+	"github.com/Lance-Mao/flash-sale-system/pkg/ctxdata"
 	"time"
 
 	"github.com/golang-jwt/jwt/v4"
-	"flashsale/app/usercenter/cmd/rpc/internal/svc"
-	"flashsale/app/usercenter/cmd/rpc/pb"
+	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/rpc/internal/svc"
+	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/rpc/pb"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )

@@ -3,7 +3,7 @@
 import (
 	"context"
 
-	"flashsale/pkg/xerr"
+	"github.com/Lance-Mao/flash-sale-system/pkg/xerr"
 
 	"github.com/pkg/errors"
 	"github.com/zeromicro/go-zero/core/logx"

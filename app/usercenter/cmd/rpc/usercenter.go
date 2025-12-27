@@ -7,11 +7,11 @@ import (
 	"github.com/zeromicro/go-zero/core/service"
 	"google.golang.org/grpc/reflection"
 
-	"flashsale/app/usercenter/cmd/rpc/internal/config"
-	"flashsale/app/usercenter/cmd/rpc/internal/server"
-	"flashsale/app/usercenter/cmd/rpc/internal/svc"
-	"flashsale/app/usercenter/cmd/rpc/pb"
-	"flashsale/pkg/interceptor/rpcserver"
+	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/rpc/internal/config"
+	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/rpc/internal/server"
+	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/rpc/internal/svc"
+	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/rpc/pb"
+	"github.com/Lance-Mao/flash-sale-system/pkg/interceptor/rpcserver"
 
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/zrpc"

@@ -2,7 +2,7 @@
 
 import (
 	"github.com/hibiken/asynq"
-	"flashsale/app/mqueue/cmd/scheduler/internal/config"
+	"github.com/Lance-Mao/flash-sale-system/app/mqueue/cmd/scheduler/internal/config"
 )
 
 type ServiceContext struct {

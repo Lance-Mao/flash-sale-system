@@ -2,7 +2,7 @@
 
 import (
 	"context"
-	"flashsale/app/mqueue/cmd/scheduler/internal/svc"
+	"github.com/Lance-Mao/flash-sale-system/app/mqueue/cmd/scheduler/internal/svc"
 )
 
 type MqueueScheduler struct {

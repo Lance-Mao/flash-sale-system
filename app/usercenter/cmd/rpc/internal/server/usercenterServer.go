@@ -6,9 +6,9 @@ package server
 import (
 	"context"
 
-	"flashsale/app/usercenter/cmd/rpc/internal/logic"
-	"flashsale/app/usercenter/cmd/rpc/internal/svc"
-	"flashsale/app/usercenter/cmd/rpc/pb"
+	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/rpc/internal/logic"
+	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/rpc/internal/svc"
+	"github.com/Lance-Mao/flash-sale-system/app/usercenter/cmd/rpc/pb"
 )
 
 type UsercenterServer struct {

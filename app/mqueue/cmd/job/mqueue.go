@@ -4,11 +4,11 @@ import (
 	"context"
 	"flag"
 	"github.com/zeromicro/go-zero/core/logx"
-	"flashsale/app/mqueue/cmd/job/internal/logic"
-	"flashsale/app/mqueue/cmd/job/internal/svc"
+	"github.com/Lance-Mao/flash-sale-system/app/mqueue/cmd/job/internal/logic"
+	"github.com/Lance-Mao/flash-sale-system/app/mqueue/cmd/job/internal/svc"
 	"os"
 
-	"flashsale/app/mqueue/cmd/job/internal/config"
+	"github.com/Lance-Mao/flash-sale-system/app/mqueue/cmd/job/internal/config"
 
 	"github.com/zeromicro/go-zero/core/conf"
 )

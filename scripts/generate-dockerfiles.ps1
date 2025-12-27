@@ -38,18 +38,17 @@ foreach ($service in $services.Keys) {
 
     # Skip if Dockerfile already exists
     if (Test-Path $dockerfile) {
-        Write-Host "OK: $service - Dockerfile already exists, skipping" -ForegroundColor Yellow
-        $skipped += $service
-        continue
+        Write-Host "Updating Dockerfile for $service..." -ForegroundColor Yellow
+        # Don't skip, update to fix path issues
+    } else {
+        Write-Host "Creating Dockerfile for $service..." -ForegroundColor Green
     }
-
-    Write-Host "Creating Dockerfile for $service..." -ForegroundColor Green
 
     # Create directory
     New-Item -ItemType Directory -Force -Path $serviceDir | Out-Null
 
-    # Extract app path
-    $appPath = Split-Path -Parent $mainFile
+    # Extract app path (convert to Unix-style path)
+    $appPath = (Split-Path -Parent $mainFile) -replace '\\', '/'
     $binaryName = $service
 
     # Generate Dockerfile content
@@ -114,36 +113,26 @@ CMD ["./$binaryName", "-f", "$configFile"]
     # Write Dockerfile
     $dockerfileContent | Out-File -FilePath $dockerfile -Encoding UTF8 -NoNewline
 
-    Write-Host "OK: $service - Dockerfile created" -ForegroundColor Green
+    Write-Host "OK: $service - Dockerfile updated/created" -ForegroundColor Green
     $created += $service
 }
 
 Write-Host ""
 Write-Host "===== Summary =====" -ForegroundColor Cyan
 
-if ($created.Count -gt 0) {
-    Write-Host ""
-    Write-Host "Created Dockerfiles for:" -ForegroundColor Green
-    foreach ($s in $created) {
-        Write-Host "  - $s"
-    }
-}
-
-if ($skipped.Count -gt 0) {
-    Write-Host ""
-    Write-Host "Skipped (already exists):" -ForegroundColor Yellow
-    foreach ($s in $skipped) {
-        Write-Host "  - $s"
-    }
+Write-Host ""
+Write-Host "Processed Dockerfiles for:" -ForegroundColor Green
+foreach ($s in $created) {
+    Write-Host "  - $s"
 }
 
 Write-Host ""
 Write-Host "Next steps:" -ForegroundColor Yellow
 Write-Host "1. Review the generated Dockerfiles in deploy/dockerfile/"
-Write-Host "2. Adjust ports and config paths if needed"
-Write-Host "3. Test build a service:"
+Write-Host "2. Test build a service:"
 Write-Host "   docker build -f deploy/dockerfile/SERVICE_NAME/Dockerfile -t SERVICE_NAME:test ."
-Write-Host "4. Uncomment services in .github/workflows/ci-cd.yml"
+Write-Host "3. Verify paths use forward slashes (/) not backslashes (\)"
+Write-Host "4. Push to GitHub to trigger CI/CD"
 
 Write-Host ""
 Write-Host "===== Done =====" -ForegroundColor Cyan

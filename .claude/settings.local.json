@@ -29,7 +29,8 @@
       "Bash(kubectl get:*)",
       "Bash(kubectl config:*)",
       "Bash(kubectl create:*)",
-      "Bash(kubectl apply:*)"
+      "Bash(kubectl apply:*)",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -File ./scripts/generate-dockerfiles.ps1)"
     ],
     "deny": [],
     "ask": []

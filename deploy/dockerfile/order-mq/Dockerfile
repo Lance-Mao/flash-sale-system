@@ -38,7 +38,7 @@ WORKDIR /app
 
 # Copy binary and config from build stage
 COPY --from=builder /app/bin/order-mq ./
-COPY --from=builder /app/app\order\cmd\mq/etc ./etc
+COPY --from=builder /app/app/order/cmd/mq/etc ./etc
 
 # Change ownership
 RUN chown -R app:app /app

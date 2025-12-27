@@ -38,7 +38,7 @@ WORKDIR /app
 
 # Copy binary and config from build stage
 COPY --from=builder /app/bin/travel-rpc ./
-COPY --from=builder /app/app\travel\cmd\rpc/etc ./etc
+COPY --from=builder /app/app/travel/cmd/rpc/etc ./etc
 
 # Change ownership
 RUN chown -R app:app /app

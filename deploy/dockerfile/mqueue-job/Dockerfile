@@ -38,7 +38,7 @@ WORKDIR /app
 
 # Copy binary and config from build stage
 COPY --from=builder /app/bin/mqueue-job ./
-COPY --from=builder /app/app\mqueue\cmd\job/etc ./etc
+COPY --from=builder /app/app/mqueue/cmd/job/etc ./etc
 
 # Change ownership
 RUN chown -R app:app /app

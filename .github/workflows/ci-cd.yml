@@ -112,18 +112,19 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      # TODO: Fix Trivy image scanning - currently fails to find pushed images
-      # - name: Scan image with Trivy
-      #   uses: aquasecurity/trivy-action@master
-      #   with:
-      #     image-ref: ${{ env.REGISTRY }}/${{ env.IMAGE_PREFIX }}/${{ matrix.service }}:${{ github.sha }}
-      #     format: 'sarif'
-      #     output: 'trivy-results.sarif'
+      - name: Scan image with Trivy
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: ${{ env.REGISTRY }}/${{ env.IMAGE_PREFIX }}/${{ matrix.service }}:main
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+        continue-on-error: true  # Don't fail build if scan has issues
 
-      # - name: Upload Trivy results
-      #   uses: github/codeql-action/upload-sarif@v3
-      #   with:
-      #     sarif_file: 'trivy-results.sarif'
+      - name: Upload Trivy results
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: 'trivy-results.sarif'
+        continue-on-error: true  # Don't fail build if upload fails
 
   # 部署到开发环境
   deploy-dev:

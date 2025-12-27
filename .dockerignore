@@ -1,0 +1,60 @@
+# Git
+.git
+.gitignore
+.github
+
+# IDE
+.idea
+.vscode
+*.iml
+.DS_Store
+
+# Documentation
+*.md
+docs/
+README.md
+LICENSE
+
+# Build artifacts
+bin/
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Test files
+*_test.go
+coverage.out
+coverage.html
+
+# Data and logs
+data/
+*.log
+*.tmp
+
+# CI/CD (already in repo)
+# .github/ # Keep for build context
+
+# Scripts (not needed in container)
+scripts/
+
+# Docker
+Dockerfile
+.dockerignore
+docker-compose*.yml
+
+# Development
+.env
+.env.local
+*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary
+tmp/
+temp/
+*.swp
+*.swo
+*~

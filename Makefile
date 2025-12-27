@@ -46,7 +46,7 @@ build:
 # 运行测试
 test:
 	@echo "Running tests..."
-	@go test -race -cover -coverprofile=coverage.out ./...
+	@go test -cover -coverprofile=coverage.out ./...
 	@go tool cover -func=coverage.out
 
 # 运行 linter

@@ -105,7 +105,7 @@
 ### 1. 克隆仓库
 
 ```bash
-git clone https://github.com/yourusername/flash-sale-system.git
+git clone https://github.com/Lance-Mao/flash-sale-system.git
 cd flash-sale-system
 ```
 
@@ -315,8 +315,8 @@ go tool cover -html=coverage.out
 
 ## 📧 联系方式
 
-- **GitHub**: [@yourusername](https://github.com/yourusername)
-- **Issues**: [GitHub Issues](https://github.com/yourusername/flash-sale-system/issues)
+- **GitHub**: [@Lance-Mao](https://github.com/Lance-Mao)
+- **Issues**: [GitHub Issues](https://github.com/Lance-Mao/flash-sale-system/issues)
 
 ---
 

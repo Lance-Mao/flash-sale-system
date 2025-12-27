@@ -28,7 +28,7 @@ if (-not $oldModule) {
     $oldModule = "github.com/Mikaelemmmm/go-zero-looklook"
 }
 
-$newModule = "github.com/yourusername/flash-sale-system"
+$newModule = "github.com/Lance-Mao/flash-sale-system"
 
 Write-Host "  Old module: $oldModule" -ForegroundColor Yellow
 Write-Host "  New module: $newModule" -ForegroundColor Green

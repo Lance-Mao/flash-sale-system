@@ -67,7 +67,7 @@ gh repo create flash-sale-system --public --source=. --remote=origin --push
 
 ```bash
 # 添加远程仓库 (替换 yourusername 为你的 GitHub 用户名)
-git remote add origin https://github.com/yourusername/flash-sale-system.git
+git remote add origin https://github.com/Lance-Mao/flash-sale-system.git
 
 # 查看远程仓库
 git remote -v
@@ -99,7 +99,7 @@ git remote -v
 git remote remove origin
 
 # 添加新的 remote
-git remote add origin https://github.com/yourusername/flash-sale-system.git
+git remote add origin https://github.com/Lance-Mao/flash-sale-system.git
 ```
 
 ### 问题 2: 推送被拒绝
@@ -142,7 +142,7 @@ git commit -m "chore: remove large files from git"
 
 ```bash
 # 替换 README.md 中的占位符
-# yourusername → 你的实际用户名
+# yourusername → Lance-Mao (已完成)
 
 # 重新提交
 git add README.md README-cn.md

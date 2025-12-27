@@ -34,7 +34,7 @@ make --version  # >= 4.0
 
 ```bash
 # 如果还没有远程仓库
-git remote add origin https://github.com/yourusername/flash-sale-system.git
+git remote add origin https://github.com/Lance-Mao/flash-sale-system.git
 
 # 推送代码
 git add .
@@ -120,7 +120,7 @@ kubectl get svc -n harbor
 docker login
 
 # 修改 CI/CD 配置
-# .github/workflows/ci-cd.yml 中的 REGISTRY 改为: docker.io/yourusername
+# .github/workflows/ci-cd.yml 中的 REGISTRY 改为: docker.io/Lance-Mao
 ```
 
 ### 2.3 选项 C: 使用云服务
@@ -131,7 +131,7 @@ docker login
 docker login --username=your-username registry.cn-hangzhou.aliyuncs.com
 
 # 修改 CI/CD 配置
-# REGISTRY: registry.cn-hangzhou.aliyuncs.com/yourusername
+# REGISTRY: registry.cn-hangzhou.aliyuncs.com/Lance-Mao
 ```
 
 **AWS ECR / Azure ACR / Google GCR** 类似配置

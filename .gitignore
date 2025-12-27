@@ -17,4 +17,8 @@ data/*
 .vscode
 .vscode/
 
+# claude code
+.claude/
+.claude
+
 

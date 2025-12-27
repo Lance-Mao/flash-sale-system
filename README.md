@@ -105,7 +105,7 @@ A high-performance flash sale e-commerce system built with **go-zero** microserv
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/flash-sale-system.git
+git clone https://github.com/Lance-Mao/flash-sale-system.git
 cd flash-sale-system
 ```
 
@@ -315,8 +315,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact
 
-- **GitHub**: [@yourusername](https://github.com/yourusername)
-- **Issues**: [GitHub Issues](https://github.com/yourusername/flash-sale-system/issues)
+- **GitHub**: [@Lance-Mao](https://github.com/Lance-Mao)
+- **Issues**: [GitHub Issues](https://github.com/Lance-Mao/flash-sale-system/issues)
 
 ---
 

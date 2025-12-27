@@ -76,7 +76,7 @@ make test
 **操作步骤**:
 ```bash
 # Task 11: 推送到 GitHub
-git remote add origin https://github.com/yourusername/flash-sale-system.git
+git remote add origin https://github.com/Lance-Mao/flash-sale-system.git
 git push -u origin main
 
 # Task 12: 配置 Secrets（在 GitHub UI 操作）

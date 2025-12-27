@@ -1,17 +1,18 @@
 ﻿apiVersion: v2
 name: flashsale
-description: A microservices travel booking system based on go-zero
+description: A high-performance flash sale e-commerce system based on go-zero
 type: application
 version: 1.0.0
 appVersion: "1.0.0"
 keywords:
   - go-zero
   - microservices
-  - travel
-  - booking
-home: https://github.com/yourusername/flash-sale-system
+  - flash-sale
+  - e-commerce
+  - high-concurrency
+home: https://github.com/Lance-Mao/flash-sale-system
 sources:
-  - https://github.com/yourusername/flash-sale-system
+  - https://github.com/Lance-Mao/flash-sale-system
 maintainers:
-  - name: Your Name
+  - name: Lance-Mao
     email: your.email@example.com

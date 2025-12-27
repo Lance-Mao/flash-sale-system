@@ -1,4 +1,4 @@
-module github.com/yourusername/flash-sale-system
+module github.com/Lance-Mao/flash-sale-system
 
 go 1.22
 

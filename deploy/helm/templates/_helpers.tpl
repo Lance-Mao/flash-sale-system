@@ -91,9 +91,9 @@ imagePullSecrets:
 Generate full image name
 */}}
 {{- define "flashsale.image" -}}
-{{- $registry := .Values.image.registry | default "docker.io" }}
-{{- $prefix := .Values.image.prefix | default "flashsale" }}
-{{- $tag := .Values.image.tag | default .Chart.AppVersion }}
+{{- $registry := .root.Values.image.registry | default "docker.io" }}
+{{- $prefix := .root.Values.image.prefix | default "flashsale" }}
+{{- $tag := .root.Values.image.tag | default .root.Chart.AppVersion | default "latest" }}
 {{- printf "%s/%s/%s:%s" $registry $prefix .serviceName $tag }}
 {{- end }}
 
@@ -116,10 +116,10 @@ Get service resources
 {{- define "flashsale.resources" -}}
 {{- $serviceType := include "flashsale.serviceType" . }}
 {{- if eq $serviceType "api" }}
-{{- toYaml .Values.resources.api }}
+{{- toYaml .root.Values.resources.api }}
 {{- else if eq $serviceType "rpc" }}
-{{- toYaml .Values.resources.rpc }}
+{{- toYaml .root.Values.resources.rpc }}
 {{- else }}
-{{- toYaml .Values.resources.mq }}
+{{- toYaml .root.Values.resources.mq }}
 {{- end }}
 {{- end }}

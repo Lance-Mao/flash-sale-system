@@ -34,7 +34,7 @@ spec:
         runAsUser: 0
       containers:
       - name: {{ $serviceConfig.name }}
-        image: {{ include "flashsale.image" (dict "Values" $.Values "serviceName" $serviceConfig.name) }}
+        image: {{ include "flashsale.image" (dict "root" $ "serviceName" $serviceConfig.name) }}
         imagePullPolicy: {{ $.Values.image.pullPolicy }}
         {{- if $serviceConfig.port }}
         ports:
@@ -72,7 +72,7 @@ spec:
           failureThreshold: {{ $.Values.readinessProbe.failureThreshold }}
         {{- end }}
         resources:
-          {{- include "flashsale.resources" (dict "Values" $.Values "serviceName" $serviceConfig.name) | nindent 10 }}
+          {{- include "flashsale.resources" (dict "root" $ "serviceName" $serviceConfig.name) | nindent 10 }}
         securityContext:
           allowPrivilegeEscalation: false
           capabilities:

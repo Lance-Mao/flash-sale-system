@@ -1,0 +1,27 @@
+{{- range $serviceName, $serviceConfig := .Values.services }}
+{{- if and $serviceConfig.enabled $serviceConfig.port }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ $serviceConfig.name }}
+  labels:
+    {{- include "flashsale.labels" $ | nindent 4 }}
+    {{- include "flashsale.serviceLabels" (dict "serviceName" $serviceConfig.name) | nindent 4 }}
+spec:
+  type: ClusterIP
+  ports:
+  - port: {{ $serviceConfig.port }}
+    targetPort: http
+    protocol: TCP
+    name: http
+  {{- if $serviceConfig.metricsPort }}
+  - port: {{ $serviceConfig.metricsPort }}
+    targetPort: metrics
+    protocol: TCP
+    name: metrics
+  {{- end }}
+  selector:
+    {{- include "flashsale.serviceSelectorLabels" (dict "serviceName" $serviceConfig.name) | nindent 4 }}
+{{- end }}
+{{- end }}

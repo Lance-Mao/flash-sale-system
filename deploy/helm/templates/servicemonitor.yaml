@@ -1,0 +1,23 @@
+{{- if .Values.serviceMonitor.enabled }}
+{{- range $serviceName, $serviceConfig := .Values.services }}
+{{- if and $serviceConfig.enabled $serviceConfig.metricsPort }}
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: {{ $serviceConfig.name }}
+  labels:
+    {{- include "flashsale.labels" $ | nindent 4 }}
+    {{- include "flashsale.serviceLabels" (dict "serviceName" $serviceConfig.name) | nindent 4 }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "flashsale.serviceSelectorLabels" (dict "serviceName" $serviceConfig.name) | nindent 6 }}
+  endpoints:
+  - port: metrics
+    interval: {{ $.Values.serviceMonitor.interval }}
+    scrapeTimeout: {{ $.Values.serviceMonitor.scrapeTimeout }}
+    path: /metrics
+{{- end }}
+{{- end }}
+{{- end }}

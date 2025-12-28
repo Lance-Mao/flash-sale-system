@@ -1,0 +1,49 @@
+Thank you for installing {{ .Chart.Name }}!
+
+Your release is named {{ .Release.Name }}.
+
+To learn more about the release, try:
+
+  $ helm status {{ .Release.Name }} -n {{ .Release.Namespace }}
+  $ helm get all {{ .Release.Name }} -n {{ .Release.Namespace }}
+
+{{- if .Values.ingress.enabled }}
+
+Application is accessible at:
+{{- range .Values.ingress.hosts }}
+  {{- if $.Values.ingress.tls }}
+  https://{{ .host }}
+  {{- else }}
+  http://{{ .host }}
+  {{- end }}
+  {{- range .paths }}
+  - {{ .path }} -> {{ .service }}
+  {{- end }}
+{{- end }}
+{{- end }}
+
+Deployed services:
+{{- range $serviceName, $serviceConfig := .Values.services }}
+{{- if $serviceConfig.enabled }}
+  - {{ $serviceConfig.name }}
+    {{- if $serviceConfig.port }}
+    Port: {{ $serviceConfig.port }}
+    {{- end }}
+    {{- if $serviceConfig.metricsPort }}
+    Metrics: {{ $serviceConfig.metricsPort }}
+    {{- end }}
+{{- end }}
+{{- end }}
+
+To check the status of your pods:
+
+  $ kubectl get pods -n {{ .Release.Namespace }} -l app=flashsale
+
+To view logs:
+
+  $ kubectl logs -n {{ .Release.Namespace }} -l app=flashsale --tail=100 -f
+
+{{- if .Values.autoscaling.enabled }}
+
+HPA is enabled. Pods will autoscale between {{ .Values.autoscaling.minReplicas }} and {{ .Values.autoscaling.maxReplicas }} replicas.
+{{- end }}

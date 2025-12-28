@@ -1,0 +1,94 @@
+{{- range $serviceName, $serviceConfig := .Values.services }}
+{{- if $serviceConfig.enabled }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $serviceConfig.name }}
+  labels:
+    {{- include "flashsale.labels" $ | nindent 4 }}
+    {{- include "flashsale.serviceLabels" (dict "serviceName" $serviceConfig.name) | nindent 4 }}
+spec:
+  {{- if not $.Values.autoscaling.enabled }}
+  replicas: {{ $.Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "flashsale.serviceSelectorLabels" (dict "serviceName" $serviceConfig.name) | nindent 6 }}
+  template:
+    metadata:
+      annotations:
+        {{- with $.Values.podAnnotations }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") $ | sha256sum }}
+      labels:
+        {{- include "flashsale.serviceSelectorLabels" (dict "serviceName" $serviceConfig.name) | nindent 8 }}
+        {{- with $.Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+    spec:
+      {{- include "flashsale.imagePullSecrets" $ | nindent 6 }}
+      securityContext:
+        runAsNonRoot: false
+        runAsUser: 0
+      containers:
+      - name: {{ $serviceConfig.name }}
+        image: {{ include "flashsale.image" (dict "Values" $.Values "serviceName" $serviceConfig.name) }}
+        imagePullPolicy: {{ $.Values.image.pullPolicy }}
+        {{- if $serviceConfig.port }}
+        ports:
+        - name: http
+          containerPort: {{ $serviceConfig.port }}
+          protocol: TCP
+        {{- end }}
+        {{- if $serviceConfig.metricsPort }}
+        - name: metrics
+          containerPort: {{ $serviceConfig.metricsPort }}
+          protocol: TCP
+        {{- end }}
+        env:
+        - name: SERVICE_NAME
+          value: {{ $serviceConfig.name | quote }}
+        envFrom:
+        - configMapRef:
+            name: {{ include "flashsale.fullname" $ }}-config
+        {{- if $serviceConfig.port }}
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: http
+          initialDelaySeconds: {{ $.Values.livenessProbe.initialDelaySeconds }}
+          periodSeconds: {{ $.Values.livenessProbe.periodSeconds }}
+          timeoutSeconds: {{ $.Values.livenessProbe.timeoutSeconds }}
+          failureThreshold: {{ $.Values.livenessProbe.failureThreshold }}
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: http
+          initialDelaySeconds: {{ $.Values.readinessProbe.initialDelaySeconds }}
+          periodSeconds: {{ $.Values.readinessProbe.periodSeconds }}
+          timeoutSeconds: {{ $.Values.readinessProbe.timeoutSeconds }}
+          failureThreshold: {{ $.Values.readinessProbe.failureThreshold }}
+        {{- end }}
+        resources:
+          {{- include "flashsale.resources" (dict "Values" $.Values "serviceName" $serviceConfig.name) | nindent 10 }}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+      {{- with $.Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with $.Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with $.Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+{{- end }}
+{{- end }}

@@ -2,13 +2,13 @@
 replicaCount: 1
 
 image:
-  registry: harbor.example.com
-  prefix: flashsale
+  registry: docker.io
+  prefix: mzlone
   pullPolicy: IfNotPresent
   tag: "latest"
 
 imagePullSecrets:
-  - name: harbor-secret
+  - name: docker-registry-secret
 
 env: dev
 

@@ -30,7 +30,14 @@
       "Bash(kubectl config:*)",
       "Bash(kubectl create:*)",
       "Bash(kubectl apply:*)",
-      "Bash(powershell.exe -ExecutionPolicy Bypass -File ./scripts/generate-dockerfiles.ps1)"
+      "Bash(powershell.exe -ExecutionPolicy Bypass -File ./scripts/generate-dockerfiles.ps1)",
+      "Bash(Select-String -Pattern \"Kubernetes\")",
+      "Bash(kubectl version:*)",
+      "Bash(powershell -Command \"Get-Content ./scripts/fix-k8s-proxy-issue.ps1 -Encoding UTF8 | ForEach-Object { $_-replace '''''', \"\"''\"\" -replace '''''', \"\"''\"\" } | Set-Content ./scripts/fix-k8s-proxy-issue-fixed.ps1 -Encoding UTF8\")",
+      "Bash(cat:*)",
+      "Bash(powershell -Command:*)",
+      "Bash(mkdir:*)",
+      "Bash(helm lint:*)"
     ],
     "deny": [],
     "ask": []

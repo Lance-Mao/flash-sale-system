@@ -28,7 +28,10 @@ spec:
         {{- toYaml . | nindent 8 }}
         {{- end }}
     spec:
-      {{- include "flashsale.imagePullSecrets" $ | nindent 6 }}
+      {{- with $.Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
       securityContext:
         runAsNonRoot: false
         runAsUser: 0
@@ -36,8 +39,9 @@ spec:
       - name: {{ $serviceConfig.name }}
         image: {{ include "flashsale.image" (dict "root" $ "serviceName" $serviceConfig.name) }}
         imagePullPolicy: {{ $.Values.image.pullPolicy }}
-        {{- if $serviceConfig.port }}
+        {{- if or $serviceConfig.port $serviceConfig.metricsPort }}
         ports:
+        {{- if $serviceConfig.port }}
         - name: http
           containerPort: {{ $serviceConfig.port }}
           protocol: TCP
@@ -46,6 +50,7 @@ spec:
         - name: metrics
           containerPort: {{ $serviceConfig.metricsPort }}
           protocol: TCP
+        {{- end }}
         {{- end }}
         env:
         - name: SERVICE_NAME

@@ -127,63 +127,69 @@ jobs:
         continue-on-error: true  # Don't fail build if upload fails
 
   # 部署到开发环境
-  # TODO: 需要配置真正的远程 K8s 集群后再启用
-  # 当前 Docker Desktop 本地集群无法从 GitHub Actions 访问
-  # 详见: docs/K8S_DEPLOYMENT_ISSUE.md
-  # deploy-dev:
-  #   needs: build-images
-  #   runs-on: ubuntu-latest
-  #   if: github.ref == 'refs/heads/main'
-  #   environment:
-  #     name: development
-  #     url: https://dev-api.flashsale.com
-  #
-  #   steps:
-  #     - name: Checkout code
-  #       uses: actions/checkout@v4
-  #
-  #     - name: Setup kubectl
-  #       uses: azure/setup-kubectl@v4
-  #
-  #     - name: Setup Helm
-  #       uses: azure/setup-helm@v4
-  #       with:
-  #         version: 'v3.14.0'
-  #
-  #     - name: Configure kubeconfig
-  #       run: |
-  #         mkdir -p $HOME/.kube
-  #         echo "${{ secrets.KUBE_CONFIG_DEV }}" | base64 -d > $HOME/.kube/config
-  #
-  #     - name: Deploy with Helm
-  #       run: |
-  #         helm upgrade --install flashsale ./deploy/helm \
-  #           --namespace flashsale-dev \
-  #           --create-namespace \
-  #           --set image.tag=${{ github.sha }} \
-  #           --set env=dev \
-  #           --values ./deploy/helm/values-dev.yaml \
-  #           --wait --timeout 5m
-  #
-  #     - name: Run smoke tests
-  #       run: |
-  #         kubectl wait --for=condition=ready pod -l app=flashsale -n flashsale-dev --timeout=300s
-  #         # 这里添加冒烟测试脚本
-  #         curl -f https://dev-api.flashsale.com/health || exit 1
-  #
-  #     - name: Notify DingTalk
-  #       if: always()
-  #       uses: zcong1993/actions-ding@master
-  #       with:
-  #         dingToken: ${{ secrets.DINGTALK_TOKEN }}
-  #         body: |
-  #           {
-  #             "msgtype": "markdown",
-  #             "markdown": {
-  #               "title": "部署通知",
-  #               "text": "### 开发环境部署\n- 状态: ${{ job.status }}\n- 分支: ${{ github.ref_name }}\n- Commit: ${{ github.sha }}\n- 操作人: ${{ github.actor }}"
-  #             }
-  #           }
+  # 通过 Cloudflare Tunnel 访问本地 Docker Desktop K8s 集群
+  # ⚠️ 仅用于学习和验证 CI/CD 流程，生产环境请使用云端 K8s
+  # 配置说明: docs/K8S_DEPLOYMENT_TUNNEL.md
+  deploy-dev:
+    needs: build-images
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    environment:
+      name: development
+      url: https://dev-api.flashsale.com
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup kubectl
+        uses: azure/setup-kubectl@v4
+
+      - name: Setup Helm
+        uses: azure/setup-helm@v4
+        with:
+          version: 'v3.14.0'
+
+      - name: Configure kubeconfig
+        run: |
+          mkdir -p $HOME/.kube
+          echo "${{ secrets.KUBE_CONFIG_DEV }}" | base64 -d > $HOME/.kube/config
+
+      - name: Verify K8s connection
+        run: |
+          echo "Testing connection to K8s cluster..."
+          kubectl version --short || echo "Warning: kubectl version check failed"
+          kubectl cluster-info || echo "Warning: cluster-info failed"
+
+      - name: Deploy with Helm
+        run: |
+          helm upgrade --install flashsale ./deploy/helm \
+            --namespace flashsale-dev \
+            --create-namespace \
+            --set image.tag=${{ github.sha }} \
+            --set env=dev \
+            --values ./deploy/helm/values-dev.yaml \
+            --wait --timeout 5m
+
+      - name: Run smoke tests
+        run: |
+          kubectl wait --for=condition=ready pod -l app=flashsale -n flashsale-dev --timeout=300s
+          # 这里添加冒烟测试脚本
+          # curl -f https://dev-api.flashsale.com/health || exit 1
+
+      - name: Notify DingTalk
+        if: always()
+        uses: zcong1993/actions-ding@master
+        with:
+          dingToken: ${{ secrets.DINGTALK_TOKEN }}
+          body: |
+            {
+              "msgtype": "markdown",
+              "markdown": {
+                "title": "部署通知",
+                "text": "### 开发环境部署\n- 状态: ${{ job.status }}\n- 分支: ${{ github.ref_name }}\n- Commit: ${{ github.sha }}\n- 操作人: ${{ github.actor }}"
+              }
+            }
 
   # 部署到生产环境（需要手动审批）
   # TODO: 需要配置真正的远程 K8s 集群后再启用

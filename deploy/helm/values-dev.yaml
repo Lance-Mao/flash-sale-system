@@ -32,6 +32,9 @@ resources:
 autoscaling:
   enabled: false
 
+serviceMonitor:
+  enabled: false
+
 ingress:
   hosts:
     - host: dev-api.flashsale.com

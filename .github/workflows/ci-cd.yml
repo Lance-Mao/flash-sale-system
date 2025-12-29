@@ -179,11 +179,17 @@ jobs:
           # Set kubectl timeout to prevent hanging
           export KUBECTL_TIMEOUT=30s
 
+          # Extract short SHA (first 7 chars) to match image tag
+          SHORT_SHA=$(echo ${{ github.sha }} | cut -c1-7)
+          IMAGE_TAG="${{ github.ref_name }}-${SHORT_SHA}"
+
+          echo "Deploying with image tag: $IMAGE_TAG"
+
           # Deploy with increased timeout
           helm upgrade --install flashsale ./deploy/helm \
             --namespace flashsale-dev \
             --create-namespace \
-            --set image.tag=${{ github.sha }} \
+            --set image.tag=$IMAGE_TAG \
             --set env=dev \
             --values ./deploy/helm/values-dev.yaml \
             --wait --timeout 10m \

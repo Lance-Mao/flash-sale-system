@@ -210,7 +210,7 @@ kubectl create secret docker-registry harbor-secret \
   --docker-password=your-token \
   --namespace=flashsale-prod
 ```
-
+ 
 ## 🎯 阶段四：部署基础设施
 
 ### 4.1 部署 MySQL

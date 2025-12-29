@@ -188,6 +188,34 @@ jobs:
             --values ./deploy/helm/values-dev.yaml \
             --wait --timeout 10m \
             --debug
+        continue-on-error: true
+
+      - name: Diagnose failed deployments
+        if: failure() || success()
+        run: |
+          echo "=== Checking all pods status ==="
+          kubectl get pods -n flashsale-dev -o wide
+
+          echo ""
+          echo "=== Checking failed/pending pods details ==="
+          kubectl get pods -n flashsale-dev --field-selector=status.phase!=Running -o wide
+
+          echo ""
+          echo "=== Pod Events ==="
+          kubectl get events -n flashsale-dev --sort-by='.lastTimestamp' | tail -50
+
+          echo ""
+          echo "=== Checking mqueue-job specifically ==="
+          kubectl describe deployment mqueue-job -n flashsale-dev || true
+          kubectl describe pod -l app=mqueue-job -n flashsale-dev || true
+
+          echo ""
+          echo "=== mqueue-job Pod Logs ==="
+          kubectl logs -l app=mqueue-job -n flashsale-dev --tail=100 --all-containers=true || echo "No logs available"
+
+          echo ""
+          echo "=== Checking all deployments ==="
+          kubectl get deployments -n flashsale-dev
 
       - name: Run smoke tests
         run: |

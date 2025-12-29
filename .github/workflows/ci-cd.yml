@@ -60,6 +60,10 @@ jobs:
     needs: lint-and-test
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
+    permissions:
+      contents: read
+      security-events: write  # 允许上传 SARIF 结果到 Code Scanning
+      packages: write         # 允许推送镜像到 GitHub Packages（可选）
     strategy:
       matrix:
         service:
@@ -121,7 +125,7 @@ jobs:
         continue-on-error: true  # Don't fail build if scan has issues
 
       - name: Upload Trivy results
-        uses: github/codeql-action/upload-sarif@v3
+        uses: github/codeql-action/upload-sarif@v4
         with:
           sarif_file: 'trivy-results.sarif'
         continue-on-error: true  # Don't fail build if upload fails

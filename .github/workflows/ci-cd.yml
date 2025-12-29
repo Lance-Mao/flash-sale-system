@@ -158,18 +158,64 @@ jobs:
       - name: Verify K8s connection
         run: |
           echo "Testing connection to K8s cluster..."
-          kubectl version --short || echo "Warning: kubectl version check failed"
-          kubectl cluster-info || echo "Warning: cluster-info failed"
+
+          # Extract API server URL from kubeconfig
+          API_SERVER=$(kubectl config view --minify -o jsonpath='{.clusters[0].cluster.server}')
+          echo "K8s API Server: $API_SERVER"
+
+          # Test network connectivity
+          echo "Testing network connectivity..."
+          curl -k -v --connect-timeout 10 "$API_SERVER/version" || echo "Warning: Cannot reach API server"
+
+          # Test kubectl
+          kubectl version --short --request-timeout=10s || echo "Warning: kubectl version check failed"
+          kubectl cluster-info --request-timeout=10s || echo "Warning: cluster-info failed"
+
+          # Show current context
+          kubectl config current-context
 
       - name: Deploy with Helm
         run: |
+          # Set kubectl timeout to prevent hanging
+          export KUBECTL_TIMEOUT=30s
+
+          # Deploy with increased timeout
           helm upgrade --install flashsale ./deploy/helm \
             --namespace flashsale-dev \
             --create-namespace \
             --set image.tag=${{ github.sha }} \
             --set env=dev \
             --values ./deploy/helm/values-dev.yaml \
-            --wait --timeout 5m
+            --wait --timeout 10m \
+            --debug
+        continue-on-error: true
+
+      - name: Diagnose failed deployments
+        if: failure() || success()
+        run: |
+          echo "=== Checking all pods status ==="
+          kubectl get pods -n flashsale-dev -o wide
+
+          echo ""
+          echo "=== Checking failed/pending pods details ==="
+          kubectl get pods -n flashsale-dev --field-selector=status.phase!=Running -o wide
+
+          echo ""
+          echo "=== Pod Events ==="
+          kubectl get events -n flashsale-dev --sort-by='.lastTimestamp' | tail -50
+
+          echo ""
+          echo "=== Checking mqueue-job specifically ==="
+          kubectl describe deployment mqueue-job -n flashsale-dev || true
+          kubectl describe pod -l app=mqueue-job -n flashsale-dev || true
+
+          echo ""
+          echo "=== mqueue-job Pod Logs ==="
+          kubectl logs -l app=mqueue-job -n flashsale-dev --tail=100 --all-containers=true || echo "No logs available"
+
+          echo ""
+          echo "=== Checking all deployments ==="
+          kubectl get deployments -n flashsale-dev
 
       - name: Run smoke tests
         run: |

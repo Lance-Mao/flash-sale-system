@@ -167,8 +167,8 @@ jobs:
           echo "Testing network connectivity..."
           curl -k -v --connect-timeout 10 "$API_SERVER/version" || echo "Warning: Cannot reach API server"
 
-          # Test kubectl
-          kubectl version --short --request-timeout=10s || echo "Warning: kubectl version check failed"
+          # Test kubectl (--short flag removed in kubectl v1.28+)
+          kubectl version --client --request-timeout=10s || echo "Warning: kubectl version check failed"
           kubectl cluster-info --request-timeout=10s || echo "Warning: cluster-info failed"
 
           # Show current context

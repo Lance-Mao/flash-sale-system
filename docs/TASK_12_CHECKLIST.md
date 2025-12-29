@@ -80,7 +80,7 @@ cd D:\project\go\flash-sale\flash-sale-system
    HARBOR_USERNAME = 你的 Docker Hub 用户名
    HARBOR_PASSWORD = 上面生成的 Access Token
 
-4. 修改 workflow 配置:
+4. 修改 workflow 配置: 
    打开 .github/workflows/ci-cd.yml
    找到 env 部分，修改：
      REGISTRY: docker.io

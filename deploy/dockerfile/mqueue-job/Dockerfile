@@ -25,7 +25,7 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build \
 FROM alpine:3.19
 
 # Install necessary runtime dependencies
-RUN apk add --no-cache ca-certificates tzdata wget && \
+RUN apk add --no-cache ca-certificates tzdata && \
     cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
     echo "Asia/Shanghai" > /etc/timezone && \
     apk del tzdata
@@ -46,10 +46,10 @@ RUN chown -R app:app /app
 # Switch to non-root user
 USER app
 
-# Health check
+# Health check for background service - check if process is running
 HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
-    CMD wget --quiet --tries=1 --spider http://localhost:1013/healthz || exit 1
+    CMD pgrep mqueue-job || exit 1
 
-EXPOSE 1013 4017
+EXPOSE 4010
 
-CMD ["./mqueue-job", "-f", "etc/job.yaml"]
+CMD ["./mqueue-job", "-f", "etc/mqueue.yaml"]

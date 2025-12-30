@@ -14,6 +14,8 @@ import (
 	"github.com/zeromicro/go-zero/core/service"
 	"github.com/zeromicro/go-zero/zrpc"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/health"
+	"google.golang.org/grpc/health/grpc_health_v1"
 	"google.golang.org/grpc/reflection"
 )
 
@@ -29,6 +31,11 @@ func main() {
 
 	s := zrpc.MustNewServer(c.RpcServerConf, func(grpcServer *grpc.Server) {
 		pb.RegisterPaymentServer(grpcServer, srv)
+
+		// Register health check service
+		healthServer := health.NewServer()
+		grpc_health_v1.RegisterHealthServer(grpcServer, healthServer)
+		healthServer.SetServingStatus("", grpc_health_v1.HealthCheckResponse_SERVING)
 
 		if c.Mode == service.DevMode || c.Mode == service.TestMode {
 			reflection.Register(grpcServer)

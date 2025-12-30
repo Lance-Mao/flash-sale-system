@@ -38,7 +38,8 @@
       "Bash(powershell -Command:*)",
       "Bash(mkdir:*)",
       "Bash(helm lint:*)",
-      "Bash(goctl api go:*)"
+      "Bash(goctl api go:*)",
+      "Bash(go list:*)"
     ],
     "deny": [],
     "ask": []
